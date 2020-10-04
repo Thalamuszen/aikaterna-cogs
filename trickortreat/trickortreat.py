@@ -487,9 +487,9 @@ class TrickOrTreat(commands.Cog):
         now = now.replace(tzinfo=None)
         if int((now - last_time).total_seconds()) < await self.config.guild(message.guild).cooldown():
             messages = [
-                "The thought of candy right now doesn't really sound like a good idea.",
-                "All the lights on this street are dark...",
-                "It's starting to get late.",
+                "You turn a corner and realise you've been down this road already",
+                "All the lights on this street are dark and you start making your way to the next street",
+                "It's starting to get late and you consider if you should go home",
                 "The wind howls through the trees. Does it seem darker all of a sudden?",
                 "You start to walk the long distance to the next house...",
                 "You take a moment to count your candy before moving on.",
@@ -533,15 +533,15 @@ class TrickOrTreat(commands.Cog):
         await bot_talking.edit(content=random.choice(door_messages))
         await asyncio.sleep(random.randint(5, 8))
         greet_messages = [
-            "Oh, hello. What a cute costume. Here, have some candy.",
-            "Look at that costume. Here you go.",
-            "Out this late at night?",
-            "Here's a little something for you.",
-            "The peppermint ones are my favorite.",
+            "Oh, hello there! What a cute costume. Here, have some candy.",
+            "Look at that costume, you must've put a lot of effort into it! Here you go.",
+            "Out this late at night? Well aren't you brave. Here, help yourself.",
+            "Here's a little something for you. Enjoy!",
+            "The peppermint ones are my favorite, take one!",
             "Come back again later if you see the light on still.",
-            "Go ahead, take a few.",
-            "Here you go.",
-            "Aww, look at you. Here, take this.",
+            "Go ahead, take a few. A few more. Stay safe!",
+            "Here you go. Now scram!",
+            "Aww, look at you. Here, take some of these.",
             "Don't eat all those at once!",
             "Well, I think this is the last of it. Go ahead and take it.",
             "*I hear the next door neighbors have some pretty good candy too, this year.*",
