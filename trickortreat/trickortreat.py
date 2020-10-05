@@ -548,7 +548,7 @@ class TrickOrTreat(commands.Cog):
         ]
         await bot_talking.edit(content=random.choice(greet_messages))
         await asyncio.sleep(2)
-        win_message = f"{message.author.mention}\nYou received:\n{candy}\N{CANDY}"
+        win_message = f"{message.author.mention} You received: {candy}\N{CANDY}"
         if lollipop > 75:
             win_message += "\n**BONUS**: 1 \N{LOLLIPOP}"
         if star > 94:
