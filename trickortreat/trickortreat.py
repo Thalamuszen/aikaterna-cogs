@@ -626,7 +626,7 @@ class TrickOrTreat(commands.Cog):
             "Aww, look at you. Here, take some of these.",
             "Don't eat all those at once!",
             "Well, I think this is the last of it. Go ahead and take it.",
-            "*I hear the next door neighbors have some pretty good candy too, this year.*",
+            "I hear the next door neighbors have some pretty good candy too, this year.",
         ]
         await bot_talking.edit(content=random.choice(greet_messages))
         await asyncio.sleep(2)
