@@ -554,7 +554,7 @@ class TrickOrTreat(commands.Cog):
         lollipop = random.randint(0, 100)
         star = random.randint(0, 100)
         chocolate = random.randint(0, 100)
-        win_message = f"{message.author.mention}\nYou received:\n{candy}\N{CANDY}"
+        win_message = f"{message.author.mention} You received: {candy} \N{CANDY}"
         await self.config.user(message.author).candies.set(userdata["candies"] + candy)
 
         if chocolate == 100:
