@@ -108,9 +108,9 @@ class TrickOrTreat(commands.Cog):
                 await ctx.send("After all that candy, sugar doesn't sound so good.")
                 yuck = random.randint(1, 10)
                 if yuck == 10:
-                    await self.config.user(ctx.author).sickness.set(userdata["sickness"] + 25)
+                    await self.config.user(ctx.author).sickness.set(userdata["sickness"] + 10)
                 if yuck in range(1, 9):
-                    await self.config.user(ctx.author).sickness.set(userdata["sickness"] + (yuck * 2))
+                    await self.config.user(ctx.author).sickness.set(userdata["sickness"] + yuck)
 
                 if userdata["candies"] > 3 + number:
                     lost_candy = userdata["candies"] - random.randint(1, 3) - number
