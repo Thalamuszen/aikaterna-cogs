@@ -213,7 +213,7 @@ class TrickOrTreat(commands.Cog):
             return await ctx.send("Not in this reality.")
         candy_price = int(round(await bank.get_balance(ctx.author)) * 0.01) * pieces
         if candy_price in range(0, 10):
-            candy_price = pieces * 2
+            candy_price = pieces
         try:
             await bank.withdraw_credits(ctx.author, candy_price)
         except ValueError:
