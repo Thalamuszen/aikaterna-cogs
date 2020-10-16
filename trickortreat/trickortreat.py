@@ -211,7 +211,7 @@ class TrickOrTreat(commands.Cog):
         credits_name = await bank.get_currency_name(ctx.guild)
         if pieces <= 0:
             return await ctx.send("Not in this reality.")
-        candy_price = int(round(await bank.get_balance(ctx.author)) / 0.002) * pieces
+        candy_price = int(round(await bank.get_balance(ctx.author)) * 0.002) * pieces
         if candy_price in range(0, 1):
             candy_price = pieces * 2
         try:
