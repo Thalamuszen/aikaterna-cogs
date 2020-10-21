@@ -104,55 +104,55 @@ class TrickOrTreat(commands.Cog):
             "You earnestly consume",
         ]
         if candy_type in ["candies", "candy"]:
-#            if (userdata["sickness"] + number * 2) in range(70, 95):
-#                await ctx.send("After all that candy, sugar doesn't sound so good.")
-#                yuck = random.randint(1, 10)
-#                if yuck == 10:
-#                    await self.config.user(ctx.author).sickness.set(userdata["sickness"] + 10)
-#                if yuck in range(1, 9):
-#                    await self.config.user(ctx.author).sickness.set(userdata["sickness"] + yuck)
+            if (userdata["sickness"] + number * 2) in range(70, 95):
+                await ctx.send("After all that candy, sugar doesn't sound so good.")
+                yuck = random.randint(1, 10)
+                if yuck == 10:
+                    await self.config.user(ctx.author).sickness.set(userdata["sickness"] + 10)
+                if yuck in range(1, 9):
+                    await self.config.user(ctx.author).sickness.set(userdata["sickness"] + yuck)
 
-#                if userdata["candies"] > 3 + number:
-#                    lost_candy = userdata["candies"] - random.randint(1, 3) - number
-#                else:
-#                    lost_candy = userdata["candies"]#
-#
-#                pick_now = await self.config.guild(ctx.guild).pick()
-#                if lost_candy < 0:
-#                    await self.config.user(ctx.author).candies.set(0)
-#                    await self.config.guild(ctx.guild).pick.set(pick_now + lost_candy)
-#                else:
-#                    await self.config.user(ctx.author).candies.set(userdata["candies"] - lost_candy)
-#                    await self.config.guild(ctx.guild).pick.set(pick_now + lost_candy)
+                if userdata["candies"] > 3 + number:
+                    lost_candy = userdata["candies"] - random.randint(1, 3) - number
+                else:
+                    lost_candy = userdata["candies"]#
 
-#                await self.config.user(ctx.author).eaten.set(userdata["eaten"] + (userdata["candies"] - lost_candy))
+                pick_now = await self.config.guild(ctx.guild).pick()
+                if lost_candy < 0:
+                    await self.config.user(ctx.author).candies.set(0)
+                    await self.config.guild(ctx.guild).pick.set(pick_now + lost_candy)
+                else:
+                    await self.config.user(ctx.author).candies.set(userdata["candies"] - lost_candy)
+                    await self.config.guild(ctx.guild).pick.set(pick_now + lost_candy)
 
-#                return await ctx.send(
-#                    f"You begin to think you don't need all this candy, maybe...\n*{lost_candy} candies are left behind*"
-#                )
+                await self.config.user(ctx.author).eaten.set(userdata["eaten"] + (userdata["candies"] - lost_candy))
 
-#            if (userdata["sickness"] + number) > 96:
-#                await self.config.user(ctx.author).sickness.set(userdata["sickness"] + 30)
-#                lost_candy = userdata["candies"] - random.randint(1, 5)
-#                if lost_candy <= 0:
-#                    await self.config.user(ctx.author).candies.set(0)
-#                    message = await ctx.send("...")
-#                    await asyncio.sleep(2)
-#                    await message.edit(content="..........")
-#                    await asyncio.sleep(2)
-#                    return await message.edit(
-#                        content="You feel absolutely disgusted. At least you don't have any candies left."
-#                    )
-#                await self.config.guild(ctx.guild).pick.set(pick + lost_candy)
-#                await self.config.user(ctx.author).candies.set(0)
-#                await self.config.user(ctx.author).eaten.set(userdata["eaten"] + (userdata["candies"] - lost_candy))
-#                message = await ctx.send("...")
-#                await asyncio.sleep(2)
-#                await message.edit(content="..........")
-#                await asyncio.sleep(2)
-#                return await message.edit(
-#                    content=f"You toss your candies on the ground in disgust.\n*{lost_candy} candies are left behind*"
-#                )
+                return await ctx.send(
+                    f"You begin to think you don't need all this candy, maybe...\n*{lost_candy} candies are left behind*"
+                )
+
+            if (userdata["sickness"] + number) > 96:
+                await self.config.user(ctx.author).sickness.set(userdata["sickness"] + 30)
+                lost_candy = userdata["candies"] - random.randint(1, 5)
+                if lost_candy <= 0:
+                    await self.config.user(ctx.author).candies.set(0)
+                    message = await ctx.send("...")
+                    await asyncio.sleep(2)
+                    await message.edit(content="..........")
+                    await asyncio.sleep(2)
+                    return await message.edit(
+                        content="You feel absolutely disgusted. At least you don't have any candies left."
+                    )
+                await self.config.guild(ctx.guild).pick.set(pick + lost_candy)
+                await self.config.user(ctx.author).candies.set(0)
+                await self.config.user(ctx.author).eaten.set(userdata["eaten"] + (userdata["candies"] - lost_candy))
+                message = await ctx.send("...")
+                await asyncio.sleep(2)
+                await message.edit(content="..........")
+                await asyncio.sleep(2)
+                return await message.edit(
+                    content=f"You toss your candies on the ground in disgust.\n*{lost_candy} candies are left behind*"
+                )
 
             pluralcandy = "candy" if number == 1 else "candies"
             await ctx.send(
