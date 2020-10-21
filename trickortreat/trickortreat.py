@@ -104,7 +104,7 @@ class TrickOrTreat(commands.Cog):
             "You earnestly consume",
         ]
         if candy_type in ["candies", "candy"]:
-            if (userdata["sickness"] + number / 2) in range(70, 95):
+            if (userdata["sickness"] + number * 2) in range(70, 95):
                 await ctx.send("After all that candy, sugar doesn't sound so good.")
                 yuck = random.randint(1, 10)
                 if yuck == 10:
