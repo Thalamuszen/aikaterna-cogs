@@ -177,7 +177,7 @@ class TrickOrTreat(commands.Cog):
         if candy_type in ["lollipops", "lollipop"]:
             pluralpop = "lollipop" if number == 1 else "lollipops"
             await ctx.send(
-                f"{random.choice(eat_phrase)} {number} {pluralpop}. You feel slightly better!\n*Sickness has gone down by {number * 50}*"
+                f"{random.choice(eat_phrase)} {number} {pluralpop}. You feel much better!\n*Sickness has gone down by {number * 50}*"
             )
             new_sickness = userdata["sickness"] - (number * 50)
             if new_sickness < 0:
