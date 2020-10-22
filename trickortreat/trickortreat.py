@@ -167,7 +167,7 @@ class TrickOrTreat(commands.Cog):
             await ctx.send(
                 f"{random.choice(eat_phrase)} {number} {pluralchoc}. You feel slightly better!\n*Sickness has gone down by {number * 10}*"
             )
-            new_sickness = userdata["sickness"] - (number * 10)
+            new_sickness = userdata["sickness"] - (number * 25)
             if new_sickness < 0:
                 new_sickness = 0
             await self.config.user(ctx.author).sickness.set(new_sickness)
@@ -179,7 +179,7 @@ class TrickOrTreat(commands.Cog):
             await ctx.send(
                 f"{random.choice(eat_phrase)} {number} {pluralpop}. You feel slightly better!\n*Sickness has gone down by {number * 20}*"
             )
-            new_sickness = userdata["sickness"] - (number * 20)
+            new_sickness = userdata["sickness"] - (number * 50)
             if new_sickness < 0:
                 new_sickness = 0
             await self.config.user(ctx.author).sickness.set(new_sickness)
