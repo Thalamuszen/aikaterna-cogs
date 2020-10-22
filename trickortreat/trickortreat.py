@@ -57,10 +57,10 @@ class TrickOrTreat(commands.Cog):
         The star of this competition. You should try to eat all of these, but don't get too sick.
 
         \N{CHOCOLATE BAR}
-        Reduces sickness by 10.
+        Reduces sickness by 25.
 
         \N{LOLLIPOP}
-        Reduces sickness by 20.
+        Reduces sickness by 50.
 
         \N{WHITE MEDIUM STAR}
         Resets sickness to 0.
