@@ -519,7 +519,7 @@ class TrickOrTreat(commands.Cog):
 
         pick_chance = random.randint(1, 12)
         if pick_chance % 4 == 0:
-            random_candies = random.randint(5, 10)
+            random_candies = random.randint(10, 25)
             guild_pool = await self.config.guild(message.guild).pick()
             await self.config.guild(message.guild).pick.set(guild_pool + random_candies)
 
