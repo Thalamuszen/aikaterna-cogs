@@ -158,7 +158,7 @@ class TrickOrTreat(commands.Cog):
             await ctx.send(
                 f"{random.choice(eat_phrase)} {number} {pluralcandy}. (Total eaten: `{humanize_number(await self.config.user(ctx.author).eaten() + number)}` \N{CANDY})"
             )
-            await self.config.user(ctx.author).sickness.set(userdata["sickness"] + (number * 2))
+#            await self.config.user(ctx.author).sickness.set(userdata["sickness"] + (number * 2))
             await self.config.user(ctx.author).candies.set(userdata["candies"] - number)
             await self.config.user(ctx.author).eaten.set(userdata["eaten"] + number)
 
